@@ -1,0 +1,53 @@
+/// ANIMATION
+$animation-timing-function: linear;
+$animation-duration: 500ms;
+
+/// FONT FAMILY
+$font-family-sans-serif: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+
+/// FONT WEIGHTS
+$font-weights: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extra-bold: 800
+);
+
+/// BREAKPOINTS
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+
+/// COMPONENTS
+
+/* Accordion */
+$accordion-gutter: 15px;
+
+/* Events */ 
+$events-gutter: 15px;
+
+/* Important Documents */
+$important-documents-columns: 3;
+$important-documents-gutter: 30px;
+
+/* Key Contacts */
+$key-contacts-columns: 2;
+$key-contacts-gutter: 30px;
+
+/* News List */
+$news-list-cards-columns: 2;
+$news-list-cards-gutter: 30px;
+
+/* Yammer Grid */
+$yammer-grid-active-color: #de002e;
+$yammer-grid-cards-gutter: 30px;
+$yammer-grid-cards-columns: 3;

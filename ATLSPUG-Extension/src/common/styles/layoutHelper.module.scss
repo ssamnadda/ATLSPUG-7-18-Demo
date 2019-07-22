@@ -1,0 +1,303 @@
+@import '~office-ui-fabric-react/dist/sass/References.scss';
+@import "mixins";
+/// COLORS
+/// @comment: Theme generated at https://developer.microsoft.com/en-us/fabric#/styles/themegenerator
+$themePrimaryColor: "[theme: themePrimary, default: #CE202E]";
+$themeLighterAltColor: "[theme: themeLighterAlt, default: #e6f6ff]";
+$themeLighterColor: "[theme: themeLighter, default: #bfe7ff]";
+$themeLightColor: "[theme: themeLight, default: #63c6ff]";
+$themeTertiaryColor: "[theme: themeTertiary, default: #0099f2]";
+$themeSecondaryColor: "[theme: themeSecondary, default: #006ba9]";
+$themeDarkAltColor: "[theme: themeDarkAlt, default: #00578a]";
+$themeDarkColor: "[theme: themeDark, default: #003e62]";
+$themeDarkerColor: "[theme: themeDarker, default: #003554]";
+$neutralLighterAltColor: "[theme: neutralLighterAlt, default: #f8f8f8]";
+$neutralLighterColor: "[theme: neutralLighter, default: #f4f4f4]";
+$neutralLightColor: "[theme: neutralLight, default: #eaeaea]";
+$neutralQuaternaryAltColor: "[theme: neutralQuaternaryAlt, default: #dadada]";
+$neutralQuaternaryColor: "[theme: neutralQuaternary, default: #d0d0d0]";
+$neutralTertiaryAltColor: "[theme: neutralTertiaryAlt, default: #c8c8c8]";
+$neutralTertiaryColor: "[theme: neutralTertiary, default: #b0b0b0]";
+$neutralSecondaryColor: "[theme: neutralSecondary, default: #777777]";
+$neutralPrimaryAltColor: "[theme: neutralPrimaryAlt, default: #525252]";
+$neutralPrimaryColor: "[theme: neutralPrimary, default: #4a4a4a]"; // text color
+$neutralDarkColor: "[theme: neutralDark, default: #2f2f2f]";
+$blackColor: "[theme: black, default: #292929]";
+$whiteColor: "[theme: white, default: #fff]";
+$primaryBackgroundColor: "[theme: primaryBackground, default: #fff]";
+$primaryTextColor: "[theme: primaryText, default: #4a4a4a]";
+$bodyBackgroundColor: "[theme: bodyBackground, default: #fff]";
+$bodyTextColor: "[theme: bodyText, default: #4a4a4a]";
+$disabledBackgroundColor: "[theme: disabledBackground, default: #f4f4f4]";
+$disabledTextColor: "[theme: disabledText, default: #c8c8c8]";
+
+/// CUSTOM
+$whiteColorTranslucent20: "[theme:whiteTranslucent13, default: rgba(255, 255, 255, 0.2)]";
+
+
+
+/// ========================================= ///
+/// TRYING TO REMOVE THESE
+/// ========================================= ///
+$rp-color-whiteTranslucent13: "[theme:whiteTranslucent13, default: rgba(255, 255, 255, 0.13)]";
+$rp-color-whiteTranslucent32: "[theme:whiteTranslucent32, default: rgba(255, 255, 255, 0.32)]";
+$rp-color-lightGreyTranslucent54: "[theme:whiteTranslucent32, default: rgba(242, 242, 242, 0.54)]";
+$rp-color-lighterGrey: "[theme:lighterGrey, default: #C8C8C8]";
+$rp-color-lightGrey: "[theme:lightGrey, default: #EEEEEE]";
+$rp-color-grey: "[theme:grey, default: #909090]";
+$rp-color-darkGrey: "[theme:darkGrey, default: #444444]";
+$rp-color-red: "[theme:red, default: #ED1B2E]";
+$rp-color-blue: "[theme:blue, default: #467B9D]";
+$rp-color-darkBlue: "[theme:darkBlue, default: #003E62]";
+$rp-color-darkBlueTranslucent97: "[theme:darkBlueTranslucent97, default: rgba(0, 62, 98, 0.97)]";
+$rp-color-yellow: "[theme:yellow, default: #FDB427]";
+/// ========================================= ///
+$aam-color-whiteTranslucent13: "[theme:whiteTranslucent13, default: rgba(255, 255, 255, 0.13)]";
+$aam-color-whiteTranslucent32: "[theme:whiteTranslucent32, default: rgba(255, 255, 255, 0.32)]";
+$aam-color-lightGreyTranslucent54: "[theme:whiteTranslucent32, default: rgba(242, 242, 242, 0.54)]";
+$aam-color-lighterGrey: "[theme:lighterGrey, default: #C8C8C8]";
+$aam-color-lightGrey: "[theme:lightGrey, default: #EEEEEE]";
+$aam-color-grey: "[theme:grey, default: #909090]";
+$aam-color-darkGrey: "[theme:darkGrey, default: #444444]";
+$aam-color-red: "[theme:red, default: #ED1B2E]";
+$aam-color-blue: "[theme:aamBlue, default: #467B9D]"; // prepended with `aam` due to system pages
+$aam-color-darkBlue: "[theme:darkBlue, default: #003E62]";
+$aam-color-darkBlueTranslucent97: "[theme:darkBlueTranslucent97, default: rgba(0, 62, 98, 0.97)]";
+$aam-color-yellow: "[theme:yellow, default: #FDB427]";
+
+
+/// FONT WEIGHTS
+// @comment: https://github.com/OfficeDev/office-ui-fabric-core/blob/646552ef9d14dcd5c83801b923992a7507cc1a2f/src/sass/variables/_Font.Variables.scss#L26
+$rp-font-weight-light: $ms-font-weight-light; // 100
+$rp-font-weight-semilight: $ms-font-weight-semilight; // 300
+$rp-font-weight-regular: $ms-font-weight-regular; // 400
+$rp-font-weight-semibold: $ms-font-weight-semibold; // 600
+$rp-font-weight-bold: 700; // $ms-font-weight-bold in latest version of `office-ui-fabric-core`
+$rp-font-weight-extrabold: bolder;
+
+
+/// FONT SIZES
+// @comment: https://github.com/OfficeDev/office-ui-fabric-core/blob/646552ef9d14dcd5c83801b923992a7507cc1a2f/src/sass/variables/_Font.Variables.scss#L33
+$rp-font-size-su-plus: 48px !default;
+$rp-font-size-su: $ms-font-size-su; // 42px
+$rp-font-size-xxl-plus: 36px !default;
+$rp-font-size-xxl-sm-plus: 32px !default;
+$rp-font-size-xxl: $ms-font-size-xxl; // 28px
+$rp-font-size-xl-plus: $ms-font-size-xl-plus; // 24px
+$rp-font-size-xl: $ms-font-size-xl; // 21px
+$rp-font-size-l-plus: 20px !default;
+$rp-font-size-l: $ms-font-size-l; // 17px
+$rp-font-size-m-plus: $ms-font-size-m-plus; // 15px
+$rp-font-size-m: $ms-font-size-m; // 14px
+$rp-font-size-s-plus: $ms-font-size-s-plus; // 13px
+$rp-font-size-s: $ms-font-size-s; // 12px
+$rp-font-size-xs: $ms-font-size-xs; // 11px
+$rp-font-size-mi: $ms-font-size-mi; // 10px
+
+
+/// BREAKPOINTS
+$mobile-dropdown-breakpoint: $ms-screen-min-lg;
+$department-news-breakpoint: $ms-screen-min-lg;
+$department-subsite-list-breakpoint: $ms-screen-min-lg;
+$department-hero-breakpoint: $ms-screen-min-xl;
+$department-video-story-hero-breakpoint: $ms-screen-min-xl;
+$document-resources-breakpoint: $ms-screen-min-lg;
+$news-rotator-breakpoint: $ms-screen-min-lg;
+$my-links-breakpoint: $ms-screen-min-xl;
+$meganav-breakpoint: $ms-screen-min-xl;
+$footer-breakpoint: $ms-screen-min-xl;
+$search-control-breakpoint: $ms-screen-min-xl;
+$trending-topics-breakpoint: $ms-screen-min-xl;
+$news-item-breakpoint: $ms-screen-min-xl;
+
+$gt-color-whiteTranslucent13: "[theme:whiteTranslucent13, default: rgba(255, 255, 255, 0.13)]";
+$gt-color-whiteTranslucent32: "[theme:whiteTranslucent32, default: rgba(255, 255, 255, 0.32)]";
+$gt-color-lightGreyTranslucent54: "[theme:whiteTranslucent32, default: rgba(242, 242, 242, 0.54)]";
+$gt-color-lighterGrey: "[theme:lighterGrey, default: #C8C8C8]";
+$gt-color-lightGrey: "[theme:lightGrey, default: #EEEEEE]";
+$gt-color-grey: "[theme:grey, default: #909090]";
+$gt-color-darkGrey: "[theme:darkGrey, default: #444444]";
+$gt-color-red: "[theme:red, default: #ED1B2E]";
+$gt-color-blue: "[theme:aamBlue, default: #467B9D]"; // prepended with `aam` due to system pages
+$gt-color-darkBlue: "[theme:darkBlue, default: #003E62]";
+$gt-color-darkBlueTranslucent97: "[theme:darkBlueTranslucent97, default: rgba(0, 62, 98, 0.97)]";
+$gt-color-yellow: "[theme:yellow, default: #FDB427]";
+
+
+/// ANIMATION 
+$rp-animation-duration: 250ms;
+$rp-animation-timing-function: linear;
+
+
+/// EXTENDERS
+%listUnstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+$font-weights: (
+  thin: 100,
+  extra-light: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+  extra-bold: 800
+);
+
+/// MIXINS
+@mixin underlineAnimation($underline-color: $rp-color-blue) {
+    position: relative;
+    &:after {
+        content: '';
+        transition-property: width, opacity;
+        transition-duration: $rp-animation-duration;
+        transition-timing-function: $rp-animation-timing-function;
+        background-color: $underline-color;
+        height: 1px;
+        width: 0px;
+        opacity: 0;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+    &:hover,
+    &:active,
+    &:focus {
+        &:after {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+}
+
+@mixin canvasZone() {
+    padding: 0 24px;
+    margin: 0 auto;
+}
+
+/* @params: 
+ * min-width: number = minimum width of list item
+ * max-columns: number = maximum number of columns
+ * last-row-equal: boolean = set the last row to equal columns
+ * gutter: string = in pixels
+ */
+
+@mixin flex-columns-list($min-width, $max-cols: 4, $gutter: $gutterMargin, $last-row-equal: true) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter;
+    >li {
+        flex: 1 0 $min-width;
+        margin-left: $gutter;
+        @if $last-row-equal {
+            @for $i from 2 through $max-cols {
+                $screen-width: ($min-width*$i)+($gutter*$i);
+                $column-width: (100%/$i);
+                @media screen and (min-width: $screen-width) {
+                    max-width: calc(#{$column-width} - #{$gutter});
+                }
+            }
+            $column-width: (100%/$max-cols);
+            @media screen and (min-width: $min-width*$max-cols) {
+                min-width: calc(#{$column-width} - #{$gutter});
+            }
+        }
+    }
+}
+
+@mixin gradient-background() {
+    background-image: linear-gradient(-53deg, #1267A3 0%, #1267A3 11%, #425363 100%);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 19px;
+    padding-bottom: 19px;
+
+    @media screen and (min-width: $ms-screen-min-lg) {
+        padding-left: 28px;
+    }
+}
+
+/* CARDS
+ * @source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_card.scss
+ */
+@mixin card-deck($breakpoint: $ms-screen-min-lg) {
+    display: flex;
+    flex-direction: column;
+
+    @media screen and (min-width: $breakpoint) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -$gutterWidth;
+    }
+}
+
+@mixin card($breakpoint: $ms-screen-min-lg) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+
+    .cardBody {
+        // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+        // as much space as possible, ensuring footers are aligned to the bottom.
+        flex: 1 1 auto;
+    }
+}
+
+
+/// GRID
+$gutterMargin: 8px;
+$gutterWidth: 24px;
+$gutterColumn: $gutterWidth / 2;
+
+.noGutters {
+    margin-left: -$gutterColumn;
+    margin-right: -$gutterColumn;
+}
+
+
+/// CARDS
+// @comment: Try to phase these out of the codebase. Use @mixins instead.
+// @source: https://github.com/twbs/bootstrap/blob/v4-dev/scss/_card.scss
+.cardDeck {
+    display: flex;
+    flex-direction: column;
+    @media screen and (min-width: $ms-screen-min-lg) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -$gutterWidth;
+    }
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    // 2 columns
+    @media screen and (min-width: $ms-screen-min-lg) {
+        max-width: calc(#{percentage(1/2)} - #{$gutterWidth});
+        margin-left: $gutterWidth;
+        // Flexbugs #4: https://github.com/philipwalton/flexbugs#4-flex-shorthand-declarations-with-unitless-flex-basis-values-are-ignored
+        flex: 1 0 50%;
+    }
+    /*
+    // 3 columns ( (200px*3)+(8px*3) )
+    @media screen and (min-width: 624px) {
+        max-width: calc(#{percentage(1/3)} - 8px);
+    }
+
+    // 4 columns ( (200px*4)+(8px*4) )
+    @media screen and (min-width: 832px) {
+        max-width: calc(#{percentage(1/4)} - 8px);
+    }
+    */
+}
+
+.cardBody {
+    // Enable `flex-grow: 1` for decks and groups so that card blocks take up
+    // as much space as possible, ensuring footers are aligned to the bottom.
+    flex: 1 1 auto;
+}

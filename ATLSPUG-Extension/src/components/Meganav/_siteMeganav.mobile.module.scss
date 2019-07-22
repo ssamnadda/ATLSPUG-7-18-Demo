@@ -1,0 +1,195 @@
+@import "../../common/styles/layoutHelper.module.scss";
+
+.miniMeganavControl {
+  position: relative;
+  display: block;
+  padding-top: 8px;
+  padding-bottom: 8px;
+
+  @media screen and (min-width: $meganav-breakpoint) {
+    display: none;
+    padding-top: 0;
+  }
+
+  .wrapper {
+    position: relative;
+  }
+
+  .container {
+    @include canvasZone;
+  }
+
+  .row {
+    @include ms-Grid-row;
+    display: flex;
+    align-items: center;
+  }
+
+  .column {
+    @include ms-Grid-col;
+    @include ms-sm12;
+  }
+
+  .mobileNavButton {
+    background-color: $ms-color-black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $ms-color-black;
+    border-right-color: $rp-color-darkGrey;
+    color: $whiteColor;
+    // Basic Button
+    outline: transparent;
+    position: absolute;
+    top: -50px;
+    z-index: 999999;
+    height: 50px;
+    -webkit-font-smoothing: antialiased;
+    font-size: 36px;
+    line-height: 1;
+    font-weight: $ms-font-weight-regular;
+    text-align: center;
+    cursor: pointer;
+    display: inline-block;
+  }
+
+  .mobileNavIcon {
+    fill: $whiteColor;
+  }
+
+  .searchFormWrapper,
+  .meganavSiteIcon {
+    @include ms-Grid-col;
+    display: flex;
+  }
+
+  .meganavSiteIcon {
+    @include ms-sm3;
+
+    > a {
+      display: block;
+
+      > img {
+        width: 100%;
+      }
+    }
+  }
+
+  .searchFormWrapper {
+    @include ms-sm9;
+    align-items: center;
+    justify-content: flex-end;
+
+    .searchFormIcon {
+      color: $themePrimaryColor;
+      font-size: $rp-font-size-l;
+    }
+
+    .searchForm {
+      display: none;
+    }
+
+    &.active {
+      .searchFormIcon {
+        margin-right: $gutterMargin;
+      }
+
+      .searchForm {
+        display: block;
+      }
+    }
+  }
+
+  .header {
+    background-color: $themePrimaryColor;
+    width: 290px;
+    overflow-y: scroll;
+    max-height: 100vh;
+
+    .navigation {
+      z-index: 1;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      .navigationList {
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+
+        > li {
+          border-top: 1px solid #c8c8c8;
+
+          &:first-child {
+            border-top: none;
+          }
+
+          > a {
+            color: $whiteColor;
+            font-size: 16px;
+            font-weight: $rp-font-weight-bold;
+            letter-spacing: 0.17px;
+            text-transform: uppercase;
+            padding: 20px;
+            display: block;
+            text-decoration: none;
+
+            .accordionIcons {
+              float: right;
+
+              .accordionIcon {
+                fill: $whiteColor;
+              }
+
+              .minusIcon {
+                display: none;
+              }
+            }
+          }
+
+          &.active > a .accordionIcons {
+            .plusIcon {
+              display: none;
+            }
+
+            .minusIcon {
+              display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .closeBtn {
+    display: none;
+  }
+
+  .topMenuSec {
+    .megaMenuBlock {
+      margin: 0 20px 20px;
+
+      h4 {
+        font-size: 14px;
+        line-height: 24px;
+        border-bottom-width: 2px;
+      }
+    }
+  }
+}
+
+/// OFFICE365 Ribbon Overrides
+:global {
+  @media screen and (max-width: ($meganav-breakpoint - 1)) {
+    .o365cs-nav-header16 {
+      .o365cs-nav-o365Branding {
+        display: none !important;
+      }
+
+      .o365cs-nav-centerAlign {
+        .o365cs-rsp-tn-hide {
+          display: block !important;
+        }
+      }
+    }
+  }
+}

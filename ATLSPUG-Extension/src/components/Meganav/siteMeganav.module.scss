@@ -1,0 +1,190 @@
+@import "../../common/styles/layoutHelper.module.scss";
+
+$meganav-height: 50px !default;
+$meganav-breakpoint: 768px !default;
+
+/// Desktop Meganav
+/// @@comment: displays at all viewports larger than or equal to 768px
+@import "_siteMeganav.desktop.module";
+
+/// Mobile Meganav
+/// @@comment: displays on all viewports smaller than 768px
+@import "_siteMeganav.mobile.module";
+
+/// Shared Meganav components
+@import "_searchForm.module";
+
+/// Global css overrides
+@import "_customGlobal.module";
+
+:global {
+  .ms-SearchBox-icon {
+    color: white;
+  }
+  .slideDownContainer {
+  }
+}
+
+.searchForm {
+  :global {
+    .ms-TextField-wrapper {
+      width: 1400;
+    }
+
+    .slideDownContainer {
+      background-color: $blackColor;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .searchBoxContainer {
+    input {
+      // height: 50px;
+    }
+    .searchButton {
+      color: $whiteColor;
+      background-color: $themePrimaryColor;
+      // height: 50px;
+    }
+  }
+}
+
+.searchFormTwo {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  position: relative;
+  margin-left: auto;
+
+  @media screen and (min-width: $ms-screen-min-lg) {
+    max-width: 275px;
+    margin-right: 20px;
+  }
+
+  :global {
+    .spark-search {
+      width: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .searchFormControl {
+    @include font-weight("bold");
+    color: $gt-color-darkGrey;
+    border: 1px solid #878787;
+    line-height: 35px;
+    height: 35px; // set for rendering error in IE11
+    padding: 0 35px 0 20px;
+    font-size: 12px;
+    flex: 1 1 auto;
+    width: 1%;
+
+    &::-webkit-input-placeholder,
+    &::-moz-placeholder,
+    &:-ms-input-placeholder,
+    &:-moz-placeholder {
+      /* Chrome/Opera/Safari */
+      color: $gt-color-darkGrey;
+      opacity: 1;
+    }
+  }
+
+  .searchFormButton {
+    @include font-weight("bold");
+    background-color: $themePrimaryColor;
+    border-color: $themePrimaryColor;
+    border-style: solid;
+    border-width: 1px;
+    color: $ms-color-white;
+    outline: none;
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+    line-height: 37px;
+    height: 37px; // set for rendering error in IE11
+    text-align: center;
+    user-select: none;
+    vertical-align: middle;
+    cursor: pointer;
+
+    .icon {
+      fill: $ms-color-white;
+      vertical-align: middle;
+    }
+  }
+}
+
+.littleStar {
+  cursor: pointer;
+  position: absolute;
+  right: $gutterMargin;
+  top: 0;
+  line-height: $meganav-height;
+  color: $rp-color-darkBlue;
+  transition-property: color;
+  transition-duration: $rp-animation-duration;
+  transition-timing-function: $rp-animation-timing-function;
+
+  &:hover {
+    color: $themePrimaryColor;
+  }
+}
+
+.navigationList {
+  padding-left: 0px;
+
+  > li {
+    list-style: none;
+
+    > a {
+      font-size: 15px;
+      font-weight: 600;
+    }
+  }
+}
+
+.megaMenuBlock {
+  h4 {
+    display: inline-block;
+    font-size: $rp-font-size-s;
+    font-weight: $rp-font-weight-bold;
+    text-transform: uppercase;
+    color: $whiteColor;
+    margin: 0;
+  }
+
+  .megaMenuList {
+    padding-left: 0;
+    margin-bottom: 0;
+
+    > li {
+      display: block;
+      list-style-type: none;
+      color: $neutralTertiaryAltColor;
+      font-size: $rp-font-size-m-plus;
+      line-height: 28px;
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      > a {
+        color: $whiteColor;
+        cursor: pointer;
+        text-decoration: none;
+        padding-bottom: 4px;
+        @include underlineAnimation($whiteColor);
+      }
+    }
+  }
+}
+
+.pointer {
+  cursor: pointer;
+
+  * {
+    cursor: default;
+  }
+}

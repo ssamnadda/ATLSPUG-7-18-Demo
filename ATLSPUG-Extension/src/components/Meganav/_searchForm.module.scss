@@ -1,0 +1,83 @@
+@import '../../common/styles/layoutHelper.module.scss';
+
+.searchForm {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20px;
+    float: right;
+    position: relative;
+    cursor: pointer;
+
+    .searchIcon {
+        margin-right: $gutterMargin;
+        font-size: 20px;
+        color: $whiteColor;
+        font-weight: bold;
+    }
+    @media screen and (min-width: $ms-screen-min-lg) {
+        max-width: 275px;
+    }
+
+    :global {
+        .ms-SearchBox {
+            width: 100%;
+            border-width: 2px;
+            border-color: $neutralQuaternaryColor;
+
+            &.is-active {
+                border-color: $themePrimaryColor;
+            }
+        }
+
+        .ms-SearchBox-field {
+            color: $themeDarkerColor;
+        }
+    }
+
+    .suggestionContainer {
+        position: absolute;
+        top: 100%;
+        margin: 0;
+        padding: 0;
+        width: calc(100% - 2px);
+        z-index: 999999;
+        background-color: $whiteColor;
+        border-style: solid;
+        border-width: 0 1px 1px 1px;
+        border-color: $rp-color-lightGrey;
+        box-shadow: 0px 8px 8px -8px rgba(0, 0, 0, 0.6);
+
+        > li {
+            border-top-style: solid;
+            border-top-color: $rp-color-lightGrey;
+            border-top-width: 1px;
+            list-style: none;
+            overflow: hidden;
+
+            &:first-child {
+                border-top-width: 0px;
+            }
+        }
+
+        
+
+        .searchSuggestion {
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: $gutterMargin ($gutterMargin*2);
+            color: $rp-color-darkBlue;
+            transition-duration: $rp-animation-duration;
+            transition-timing-function: $rp-animation-timing-function;
+            transition-property: color, background-color;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $ms-color-black;
+                background-color: $rp-color-lightGrey;
+            }
+        }
+    }
+}

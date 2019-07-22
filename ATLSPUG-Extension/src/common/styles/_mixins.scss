@@ -1,0 +1,89 @@
+@import 'vars';
+
+/// LISTS
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+/// IMAGES
+@mixin img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+/// LAYOUT
+@mixin breakpoint($size) {
+  @if map-has-key($grid-breakpoints, $size) { 
+    @media screen and (min-width: map-get($grid-breakpoints, $size)) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $size) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-max($size) {
+  @if map-has-key($grid-breakpoints, $size) { 
+    @media screen and (max-width: #{map-get($grid-breakpoints, $size) - 1}) {
+      @content;
+    }
+  } @else {
+    @media (max-width: #{$size - 1}) {
+      @content;
+    }
+  }
+}
+
+/// BUTTONS
+@mixin button-reset {
+  @include font-weight('regular');
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: $color__black;
+  display: inline-block;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+/// TYPOGRAPHY
+@mixin font-family-sans-serif {
+  font-family: $font-family-sans-serif;
+}
+
+@mixin font-weight($weight) {
+  @if map-has-key($font-weights, $weight) { 
+    font-weight: map-get($font-weights, $weight);
+  } @else {
+    @warn '`#{$weight}` is not an option for font-weight! Valid options are: thin, extra-light, light, regular, medium, semibold, bold, extra-bold';
+  }
+}
+
+@mixin header($color: $color__white) {
+  @include font-weight('bold');  
+  color: $color;
+  line-height: 1.35;
+  font-size: 18px;
+  display: inline-block;
+  margin-bottom: 7px;
+}
+
+@mixin tiny-header($color: $color__white) {
+  display: block;
+  font-size: 12px;
+  color: $color;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+@mixin date($color: $color__white) {
+  @include font-weight('light');
+  text-transform: capitalize;
+	display: block;
+	font-size: 12px;
+	color: $color;
+}
